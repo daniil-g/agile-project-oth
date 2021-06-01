@@ -1,5 +1,23 @@
-extends layout
+extends layout/layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  main.container(role="main")
+    //- h1= title
+    //- p Welcome to #{title}
+    //- .container
+    //-   .jumbotron
+    //-     h1.display-4 Deine Buchungen
+    //-     p.lead Hier kannst du deine Buchungen sehen
+    //-     hr.my-4
+    //-     p.lead
+    //-       a.btn.btn-primary.btn-lg(href="" role="button") Zur Buchung
+
+    .jumbotron
+      h1.display-4 Deine Buchungen!
+      p.lead
+        | Hier kannst du deine Buchungen verwalten
+      hr.my-4
+      p
+        | 
+      p.lead
+        a.btn.btn-primary.btn-lg(href='#' role='button') Neue Buchung
