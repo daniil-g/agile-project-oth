@@ -1,13 +1,9 @@
-doctype html
-html(lang='en')
-  head
-    include includes/head.pug
-    //- 
-  body
-    include includes/navbar.pug
-    block content
-input(data-provide='datepicker')
-.input-group.date(data-provide='datepicker')
-  input.form-control(type='text')
-  .input-group-addon
-    span.glyphicon.glyphicon-th
+extends layout/layout
+
+block content
+  main.container(role="main")
+    input(data-provide='datepicker')
+    .input-group.date(data-provide='datepicker')
+      input.form-control(type='text')
+      .input-group-addon
+        span.glyphicon.glyphicon-th
