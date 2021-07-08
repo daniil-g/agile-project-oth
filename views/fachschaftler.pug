@@ -1,0 +1,53 @@
+extends layout/layout
+
+block content
+  main.container(role="main")
+    .row
+      .col.col-lg 
+        h4 Deine eingetragenen Zeiten: 
+
+    .row
+      .col.col-sm-3
+      .col.col-sm-6
+        form(action="fachschaftler/makeTimeAvailible" method="post") 
+          .form-group
+            label(for='datetimeFrom') Von
+            input.float-right(type="datetime-local" id="datetimeFrom" name="datetimeFrom")
+          .form-group
+            label(for='datetimeTo') Bis
+            input.float-right(type='datetime-local' id="datetimeTo" name="datetimeTo")
+          button.btn.btn-primary(type="submit") Eintragen
+        if success
+          .alert.alert-primary #{success}
+        if error_book
+          div(class="alert alert-danger small" role="alert") #{error_book}
+      .col.col-sm-3
+
+    .row.align-items-center(aria-hidden='true')
+      .col.col-lg
+        h4 Deine bisherigen Zeiten anzeigen
+      .col.col-sm
+        .form-group
+          .row.justify-content-between
+            .col.col-sm
+              label(for='my-input') Tag auswählen
+            .col.col-sm
+              input.float(type="date" name="datetimeAt" id="dateTimeAt") 
+          .row.justify-content-md-center.align-items-center
+            .col.col-lg-2
+            .col.col-md-auto
+              button.btn.btn-secondary#loadButtonId(type=submit) laden
+            .col.col-lg-2
+        
+    .row
+      .col.col-lg
+      .col.col-lg-5
+        ul.list-group#daysList
+          li.list-group-item
+            span.name 26.05.2021
+              button.button.btn.btn-warning.float-right(type=button) 
+                i.fas.fa-trash.remove-item
+          //- li.list-group-item.list-group-item-action.disabled(href='#', aria-disabled='true', tabindex=-1) Disabled item
+      .col.col-lg
+
+  script(src="javascripts/fachschaftler.js") 
