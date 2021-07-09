@@ -13,4 +13,8 @@ router.get('/book', function(req, res, next) {
 
 
 
+/* GET datepicker page. */
+router.get('/bookdate', function(req, res, next) {
+  res.render('datepicker');
+});
 module.exports = router;
